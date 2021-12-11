@@ -7,7 +7,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/prada/proprietary/vendor/bin/gx_fpd:$(TARGET_COPY_OUT_VENDOR)/bin/gx_fpd \
-    vendor/xiaomi/prada/proprietary/vendor/bin/mm-qcamera-daemon:$(TARGET_COPY_OUT_VENDOR)/bin/mm-qcamera-daemon \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/MTP/MTP_General_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/MTP/MTP_General_cal.acdb \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/MTP/MTP_Global_cal.acdb \
@@ -57,13 +56,6 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Hdmi_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Hdmi_cal.acdb \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Headset_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Headset_cal.acdb \
     vendor/xiaomi/prada/proprietary/vendor/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Speaker_cal.acdb:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/QRD/msm8952-sku2-snd-card/QRD_SKU2_Speaker_cal.acdb \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/msm8937_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8937_camera.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_ofilm_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_ofilm_chromatix.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_qt_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_qt_chromatix.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_sunny_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_sunny_chromatix.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_ofilm_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_ofilm_chromatix.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_qt_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_qt_chromatix.xml \
-    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_sunny_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_sunny_chromatix.xml \
     vendor/xiaomi/prada/proprietary/vendor/firmware/mxt_308u.enc:$(TARGET_COPY_OUT_VENDOR)/firmware/mxt_308u.enc \
     vendor/xiaomi/prada/proprietary/vendor/firmware/mxt_308u_b5_f.raw:$(TARGET_COPY_OUT_VENDOR)/firmware/mxt_308u_b5_f.raw \
     vendor/xiaomi/prada/proprietary/vendor/lib64/hw/consumerir.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/consumerir.default.so \
@@ -73,7 +65,18 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/prada/proprietary/vendor/lib64/libfp_client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfp_client.so \
     vendor/xiaomi/prada/proprietary/vendor/lib64/libfpnav.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfpnav.so \
     vendor/xiaomi/prada/proprietary/vendor/lib64/libfpservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfpservice.so \
-    vendor/xiaomi/prada/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_VENDOR)/bin/hvdcp_opti \
+    vendor/xiaomi/prada/proprietary/vendor/bin/hvdcp_opti:$(TARGET_COPY_OUT_VENDOR)/bin/hvdcp_opti
+
+ifeq ($(TARGET_COPY_CAMERA_BLOBS),true)
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/prada/proprietary/vendor/bin/mm-qcamera-daemon:$(TARGET_COPY_OUT_VENDOR)/bin/mm-qcamera-daemon \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/msm8937_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8937_camera.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_ofilm_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_ofilm_chromatix.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_qt_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_qt_chromatix.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov13853_sunny_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov13853_sunny_chromatix.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_ofilm_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_ofilm_chromatix.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_qt_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_qt_chromatix.xml \
+    vendor/xiaomi/prada/proprietary/vendor/etc/camera/ov5670_sunny_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/ov5670_sunny_chromatix.xml \
     vendor/xiaomi/prada/proprietary/vendor/lib/libactuator_bu64244.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_bu64244.so \
     vendor/xiaomi/prada/proprietary/vendor/lib/libactuator_bu64291gwz.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_bu64291gwz.so \
     vendor/xiaomi/prada/proprietary/vendor/lib/libactuator_dw9763_sunny.so:$(TARGET_COPY_OUT_VENDOR)/lib/libactuator_dw9763_sunny.so \
@@ -316,3 +319,4 @@ PRODUCT_COPY_FILES += \
     vendor/xiaomi/prada/proprietary/vendor/lib/libseemore.so:$(TARGET_COPY_OUT_VENDOR)/lib/libseemore.so \
     vendor/xiaomi/prada/proprietary/vendor/lib/libtrueportrait.so:$(TARGET_COPY_OUT_VENDOR)/lib/libtrueportrait.so \
     vendor/xiaomi/prada/proprietary/vendor/lib/libubifocus.so:$(TARGET_COPY_OUT_VENDOR)/lib/libubifocus.so
+endif
